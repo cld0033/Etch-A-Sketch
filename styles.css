@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
@@ -8,15 +14,40 @@
     grid-gap: 0em;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    background-color: black;
+    background-color: rgb(32, 31, 31);
+    margin: 50px;
+    max-width: 960px;
+    min-width: fit-content;
 }
 
 .grid-item{
     padding: 1em;
-    border: 1px solid #131313;
-    text-align: center;
+    border: 1px solid #252424; 
+
 }
 
 .grid-item:hover{
     background-color: #ddd;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+}
+
+#resetButton{
+    display: flex;
+    justify-content: center;
+    border-radius: 250px;
+    font-size: 40px;
+}
+
+#resetButton:hover{
+    background-color: lightblue
+}
+
+.secondary{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
 }
