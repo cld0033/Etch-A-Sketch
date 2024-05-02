@@ -26,7 +26,7 @@ function makeGrid(rows, cols) {
   const gridElement = document.querySelectorAll('.grid-item');
   gridElement.forEach((gridElement) => {
     gridElement.addEventListener('click', () => {
-      gridElement.style.backgroundColor = 'white';
+      gridElement.style.backgroundColor = `${currentColor}` || 'white';
     });
   });
 }
@@ -40,7 +40,7 @@ buttonGroup.setAttribute('class', 'options');
 document.body.appendChild(buttonGroup);
 
 //creates a reset button to erase and set grid.
-let reset = document.createElement('button');
+const reset = document.createElement('button');
 reset.setAttribute('id', 'resetButton');
 reset.innerText = 'Reset';
 buttonGroup.appendChild(reset);
@@ -50,4 +50,33 @@ const resetGrid = document.getElementById('resetButton');
 resetGrid.addEventListener('click', () => {
   gridContainer.innerText = '';
   makeGrid(16, 16);
+});
+
+let currentColor = '';
+
+const blue = document.createElement('button');
+blue.setAttribute('id', 'blueButton');
+blue.setAttribute('class', 'colorOption');
+blue.innerText = '';
+buttonGroup.appendChild(blue);
+blue.addEventListener('click', () => {
+  currentColor = 'blue';
+});
+
+const red = document.createElement('button');
+red.setAttribute('id', 'redButton');
+red.setAttribute('class', 'colorOption');
+red.innerText = '';
+buttonGroup.appendChild(red);
+red.addEventListener('click', () => {
+  currentColor = 'red';
+});
+
+const orange = document.createElement('button');
+orange.setAttribute('id', 'orangeButton');
+orange.setAttribute('class', 'colorOption');
+orange.innerText = '';
+buttonGroup.appendChild(orange);
+orange.addEventListener('click', () => {
+  currentColor = 'orange';
 });
